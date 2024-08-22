@@ -19,13 +19,17 @@
 			<TextBlock Text="Select Directory" 
 					   VerticalAlignment="Center" 
 					   Margin="5"/>
-			<TextBox Width="300" Margin="5"/>
-			<Button Content=". . ." Margin="5">
+			<TextBox Width="300" 
+					 Margin="5" 
+					 Text="{Binding FileName}"/>
+			<Button Content=". . ." 
+					Command="{Binding LoadDirectoryCommand}"
+					Margin="5">
 				
 			</Button>
 		</StackPanel>
 		<Grid Grid.Row="1">
-			<TextBox Width="500"  Height="500" />
+			<TextBox Width="500"  Height="500" Margin="0, 10, 0, 0"/>
 		</Grid>
 	</Grid>  
 </UserControl>
