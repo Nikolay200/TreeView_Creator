@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeViewCreator_AvaloniaApp", "TreeViewCreator_AvaloniaApp.csproj", "{0057DC82-96A6-45CF-BE8E-866754C12A96}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeViewCreator_AvaloniaApp.Desktop", "..\TreeViewCreator_AvaloniaApp.Desktop\TreeViewCreator_AvaloniaApp.Desktop.csproj", "{8CFB5AB2-501B-4FE3-B387-DF84F2788C7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0057DC82-96A6-45CF-BE8E-866754C12A96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0057DC82-96A6-45CF-BE8E-866754C12A96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0057DC82-96A6-45CF-BE8E-866754C12A96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0057DC82-96A6-45CF-BE8E-866754C12A96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CFB5AB2-501B-4FE3-B387-DF84F2788C7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CFB5AB2-501B-4FE3-B387-DF84F2788C7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CFB5AB2-501B-4FE3-B387-DF84F2788C7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CFB5AB2-501B-4FE3-B387-DF84F2788C7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50B2016A-2D08-454C-9809-DC531C5D8009}
+	EndGlobalSection
+EndGlobal
