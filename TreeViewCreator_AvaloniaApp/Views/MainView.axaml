@@ -3,7 +3,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:TreeViewCreator_AvaloniaApp.ViewModels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="550" 
+			                  d:DesignHeight="650"
+			                  MaxHeight="650"
+			                  MaxWidth="550"
              x:Class="TreeViewCreator_AvaloniaApp.Views.MainView"
              x:DataType="vm:MainViewModel">
   <Design.DataContext>
@@ -11,25 +14,46 @@
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:MainViewModel />
   </Design.DataContext>
-	<Grid RowDefinitions="Auto, Auto" Margin="0, 20, 0, 0">
+	<Grid RowDefinitions="Auto, Auto, Auto" 
+		  Margin="0, 20, 0, 0">
 		<StackPanel Grid.Row="0" 
 					Orientation="Horizontal" 
 					VerticalAlignment="Center"
-					HorizontalAlignment="Center">
+					HorizontalAlignment="Center"
+				    Width="500">
 			<TextBlock Text="Select Directory" 
 					   VerticalAlignment="Center" 
 					   Margin="5"/>
 			<TextBox Width="300" 
 					 Margin="5" 
-					 Text="{Binding FileName}"/>
+					 Text="{Binding FolderDirectory}"/>
 			<Button Content=". . ." 
-					Command="{Binding LoadDirectoryCommand}"
+					Command="{Binding SelectDirectoryCommand}"
 					Margin="5">
 				
 			</Button>
 		</StackPanel>
 		<Grid Grid.Row="1">
-			<TextBox Width="500"  Height="500" Margin="0, 10, 0, 0"/>
+			<TextBox Width="500"  
+					 Height="500" 
+					 Margin="0, 10, 0, 10"/>
 		</Grid>
+		<DockPanel Grid.Row="2" 
+				    VerticalAlignment="Center"
+					HorizontalAlignment="Center">
+			<ProgressBar Height="30" 
+					 IsIndeterminate="False"					 
+					 Minimum="0"
+					 Maximum="100"			     
+					 Value="{Binding Progress}"
+					 Foreground="Green"
+				     Margin="0,5,10,0"/>
+			<Button Content="Load Directory" 
+					DockPanel.Dock="Right"
+					Margin="10, 5, 0, 0"
+					Command="{Binding LoadDirectoryCommand}">				
+			</Button>
+		</DockPanel>
+
 	</Grid>  
 </UserControl>

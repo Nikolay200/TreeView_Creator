@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:TreeViewCreator_AvaloniaApp.Views"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="550" d:DesignHeight="650" MaxHeight="650" MaxWidth="550"
         x:Class="TreeViewCreator_AvaloniaApp.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="TreeViewCreator_AvaloniaApp">
