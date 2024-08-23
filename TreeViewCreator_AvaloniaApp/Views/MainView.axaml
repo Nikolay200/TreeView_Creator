@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:TreeViewCreator_AvaloniaApp.ViewModels"
+			 xmlns:converters="using:TreeViewCreator_AvaloniaApp.Converters"
              mc:Ignorable="d" d:DesignWidth="550" 
 			                  d:DesignHeight="650"
 			                  MaxHeight="650"
@@ -14,6 +15,9 @@
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
     <vm:MainViewModel />
   </Design.DataContext>
+	<UserControl.Resources>
+		<converters:IntToStringConverter x:Key="IntToStringConverter"/>
+	</UserControl.Resources>
 	<Grid RowDefinitions="Auto, Auto, Auto" 
 		  Margin="0, 20, 0, 0">
 		<StackPanel Grid.Row="0" 
@@ -34,26 +38,39 @@
 			</Button>
 		</StackPanel>
 		<Grid Grid.Row="1">
-			<TextBox Width="500"  
-					 Height="500" 
-					 Margin="0, 10, 0, 10"/>
+			<TreeDataGrid Width="500"
+					      Height="500"
+					      Margin="0, 10, 0, 10"
+						  Source="{Binding Source}"/>
 		</Grid>
 		<DockPanel Grid.Row="2" 
 				    VerticalAlignment="Center"
 					HorizontalAlignment="Center">
-			<ProgressBar Height="30" 
-					 IsIndeterminate="False"					 
-					 Minimum="0"
-					 Maximum="100"			     
-					 Value="{Binding Progress}"
-					 Foreground="Green"
-				     Margin="0,5,10,0"/>
+			<Grid>
+				<ProgressBar x:Name="Prog_ProgressBar" 
+							 Height="30"
+		                     IsIndeterminate="False"
+		                     Minimum="{Binding Minimum}"
+		                     Maximum="{Binding Maximum}"
+		                     Value="{Binding ProgressValue}"
+		                     Foreground="Green"
+		                     Margin="0,5,10,0"/>
+				<TextBlock x:Name="Progress_TextBlock"
+		                   VerticalAlignment="Bottom"
+		                   Margin="0,0,0,10"
+		                   TextAlignment="Center"
+		                   Text="{Binding ElementName=Prog_ProgressBar, 
+				                 Path=Value, 
+			                     Converter={StaticResource IntToStringConverter}, 
+			                     StringFormat={}{0}%}"
+		                   Foreground="Black">
+				</TextBlock>
+			</Grid>
 			<Button Content="Load Directory" 
 					DockPanel.Dock="Right"
 					Margin="10, 5, 0, 0"
 					Command="{Binding LoadDirectoryCommand}">				
 			</Button>
 		</DockPanel>
-
 	</Grid>  
 </UserControl>
